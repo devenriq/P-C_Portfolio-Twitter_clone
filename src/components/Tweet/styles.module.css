@@ -1,0 +1,19 @@
+.tweet{
+  margin: 20px 0
+}
+
+.header{
+  display: flex;
+
+}
+
+.header img{
+  border-radius: 50%;
+  margin: 0 20px;
+  height: 45px;
+  height: 45px;
+}
+
+.header span{
+  margin: 0 10px;
+}
