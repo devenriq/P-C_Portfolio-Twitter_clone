@@ -25,8 +25,8 @@ export const PublishTweet = () => {
           placeholder="Escribe un tweet"
         ></textarea>
 
-        <div>
-          <div className={styles.footer}>
+        <div className={styles.footer}>
+          <div>
             <ul className={styles.list}>
               <li>
                 <button

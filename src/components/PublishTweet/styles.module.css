@@ -7,22 +7,29 @@
   margin: 20px;
 }
 
+.form{
+  width: 500px;
+}
+
 .form textarea{
   border:0;
   font-family: sans-serif;
   font-size: 18px;
   padding: 10px;
-  width: 400px;
+  width: 500px;
   height: 200px;
   resize: none
 }
 
 .footer{
   width: 100%;
+  margin: 20px 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .list{
+  width: 370px;
   display: flex;
+  justify-content: space-evenly;
 }

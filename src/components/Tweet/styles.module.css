@@ -51,14 +51,3 @@
   list-style: none;
 }
 
-.list button{
-  background: transparent;
-  border: 0;
-  font-size: 24px;
-
-}
-
-
-.list .button:hover{
-  cursor:pointer;
-}
