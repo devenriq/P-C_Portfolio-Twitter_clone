@@ -6,7 +6,9 @@ import { RiEmotionHappyLine, RiFileGifLine } from "react-icons/ri";
 import { GrList } from "react-icons/gr";
 
 export const PublishTweet = () => {
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   console.log("first");
   return (
     <div className={styles.publishTweet}>
@@ -29,38 +31,22 @@ export const PublishTweet = () => {
           <div>
             <ul className={styles.list}>
               <li>
-                <button
-                  onClick={() => {
-                    console.log("Agregando imagen");
-                  }}
-                >
+                <button>
                   <FaImage />
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => {
-                    console.log("agregando gif");
-                  }}
-                >
+                <button>
                   <RiFileGifLine />
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => {
-                    console.log("Agregando lista");
-                  }}
-                >
+                <button>
                   <GrList />
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => {
-                    console.log("Agregando lista");
-                  }}
-                >
+                <button>
                   <RiEmotionHappyLine />
                 </button>
               </li>
@@ -71,17 +57,17 @@ export const PublishTweet = () => {
               </li>
 
               <li>
-                <button
-                  onClick={() => {
-                    console.log("Agregando ubicacion");
-                  }}
-                >
+                <button>
                   <MdGpsFixed />
                 </button>
               </li>
             </ul>
           </div>
-          <button onClick={handleSubmit} type="submit">
+          <button
+            onClick={handleSubmit}
+            type="submit"
+            className={styles.submit}
+          >
             Tweetear
           </button>
         </div>

@@ -18,7 +18,8 @@
   padding: 10px;
   width: 500px;
   height: 200px;
-  resize: none
+  resize: none;
+  border-radius: 10px;
 }
 
 .footer{
@@ -32,4 +33,11 @@
   width: 370px;
   display: flex;
   justify-content: space-evenly;
+}
+
+.submit{
+  padding: 10px 20px;
+  border-radius:  20px;
+  background-color: #00d5ff;
+  color: white;
 }
