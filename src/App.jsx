@@ -4,10 +4,12 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
+      <Tweet username="@enrigios" name="Enrique" />
+      <Tweet username="@juandc" name="Juan David">
+        <p>Hola mundo!</p>
+        <img src="https://picsum.photos/200" alt="img" />
+      </Tweet>
+      <Tweet username="@dsofia" name="Diana Palomares" />
     </div>
   );
 }
