@@ -8,10 +8,23 @@ export const Tweet = ({ name, username, children }) => {
   const [rt, setRt] = useState(0);
   const [comments, setComments] = useState(0);
 
+  const handleClick = () => {
+    setLikes((prevState) => {
+      if (prevState) {
+        return 0;
+      }
+      return 1;
+    });
+  };
+
   return (
     <article className={styles.tweet}>
       <div className={styles.header}>
-        <img src="https://picsum.photos/100" alt="Profile pic" />
+        <img
+          src="https://picsum.photos/100"
+          alt="Profile pic"
+          className="img-default"
+        />
         <div className={styles.container}>
           <span className={styles.name}>{name}</span>
           <span className={styles.gray}>{username}</span>
@@ -23,7 +36,7 @@ export const Tweet = ({ name, username, children }) => {
       <div className="styles.footer">
         <ul className={styles.list}>
           <li>
-            <button onClick={() => setLikes(likes + 1)}>
+            <button onClick={handleClick}>
               <FaHeart />
             </button>
             {likes}
