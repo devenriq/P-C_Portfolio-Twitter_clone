@@ -38,6 +38,6 @@
 .submit{
   padding: 10px 20px;
   border-radius:  20px;
-  background-color: #00d5ff;
+  background-color: var(--twitter-color);
   color: white;
 }

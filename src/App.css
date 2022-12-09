@@ -1,3 +1,8 @@
+:root{
+  --border-color:#8080804d;
+  --twitter-color: #1d9bf0
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +11,9 @@
 
 body {
   font-family: sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .img-default{

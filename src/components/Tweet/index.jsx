@@ -42,7 +42,16 @@ export const Tweet = ({ name, username, children }) => {
             {likes}
           </li>
           <li>
-            <button onClick={() => setRt(rt + 1)}>
+            <button
+              onClick={() =>
+                setRt((prevState) => {
+                  if (prevState) {
+                    return 0;
+                  }
+                  return 1;
+                })
+              }
+            >
               <FaRetweet />
             </button>
             {rt}
