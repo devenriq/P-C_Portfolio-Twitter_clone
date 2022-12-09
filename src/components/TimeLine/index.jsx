@@ -1,32 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./styles.module.css";
 
+import { useApi } from "../../hooks/useApi";
 import { PublishTweet } from "../PublishTweet";
+import { LoadingTweets } from "../LoadingTweets";
 import { Tweet } from "../Tweet";
 
 export const TimeLine = () => {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API}/10`)
-      .then((res) => res.json())
-      .then((quotes) => {
-        console.log(quotes);
-        setData(quotes);
-      });
-  }, []);
+  const { data, error, loading } = useApi(import.meta.env.VITE_API);
+
   return (
     <div className={styles.timeline}>
       <PublishTweet />
-      {data ? (
-        data.map(() => {
-          <Tweet username={tweet.author.split("")} name={tweet.author}>
-            <p>{Tweet.quote}</p>
+      {data &&
+        data.map((tweet) => (
+          <Tweet username={tweet.author.split(" "[0])} name={tweet.author}>
+            <p>{tweet.quote}</p>
             <img src="https://picsum.photos/200" alt="img" />
-          </Tweet>;
-        })
-      ) : (
-        <p>Loading tweet</p>
-      )}
+          </Tweet>
+        ))}
+      {loading && <LoadingTweets />}
     </div>
   );
 };
