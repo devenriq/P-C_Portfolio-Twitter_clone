@@ -1,25 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 
 import { PublishTweet } from "../PublishTweet";
 import { Tweet } from "../Tweet";
 
 export const TimeLine = () => {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API}/10`)
+      .then((res) => res.json())
+      .then((quotes) => {
+        console.log(quotes);
+        setData(quotes);
+      });
+  }, []);
   return (
     <div className={styles.timeline}>
       <PublishTweet />
-      <Tweet username="@enrigios" name="Enrique">
-        <p>Hola mundo!</p>
-        <img src="https://picsum.photos/200" alt="img" />
-      </Tweet>
-      <Tweet username="@juandc" name="Juan David">
-        <p>Hola mundo2!</p>
-        <img src="https://picsum.photos/300" alt="img" />
-      </Tweet>
-      <Tweet username="@dsofia" name="Diana Palomares">
-        <p>Hola mundo3!</p>
-        <img src="https://picsum.photos/400" alt="img" />
-      </Tweet>
+      {data ? (
+        data.map(() => {
+          <Tweet username={tweet.author.split("")} name={tweet.author}>
+            <p>{Tweet.quote}</p>
+            <img src="https://picsum.photos/200" alt="img" />
+          </Tweet>;
+        })
+      ) : (
+        <p>Loading tweet</p>
+      )}
     </div>
   );
 };

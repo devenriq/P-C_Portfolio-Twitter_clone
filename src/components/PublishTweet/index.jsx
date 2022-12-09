@@ -9,7 +9,6 @@ export const PublishTweet = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-  console.log("first");
   return (
     <div className={styles.publishTweet}>
       <img
